@@ -29,8 +29,53 @@ namespace ShootingDice
             large.Name = "Bigun Rollsalot";
 
             player1.Play(large);
+            Player smackTalker = new SmackTalkingPlayer()
+            {
+                Name = "Sassy",
+                Taunt = "You are trash!"
+            };
+            Console.WriteLine("-------------------");
+
+
+            player1.Play(smackTalker);
+            smackTalker.Play(player1);
 
             Console.WriteLine("-------------------");
+
+
+            Player oneHigherPlayer = new OneHigherPlayer();
+            oneHigherPlayer.Name = "Cheater";
+            oneHigherPlayer.Play(player3);
+
+            Console.WriteLine("-------------------");
+
+            Player humanPlayer = new HumanPlayer();
+            humanPlayer.Name = "Human";
+            humanPlayer.Play(player3);
+            player3.Play(humanPlayer);
+
+            Console.WriteLine("-------------------");
+
+            Player CreativeSmackTalkingPlayer = new CreativeSmackTalkingPlayer();
+            CreativeSmackTalkingPlayer.Name = "SmackTalker";
+            player3.Play(CreativeSmackTalkingPlayer);
+            player1.Play(CreativeSmackTalkingPlayer);
+
+            // Console.WriteLine("-------------------");
+            // Player SoreLooser = new SoreLoserPlayer();
+            // SoreLooser.Name = "SooreLooser";
+            // player3.Play(SoreLooser);
+            // SoreLooser.Play(large);
+
+            // Console.WriteLine("-------------------");
+
+            Player upperHalfPlayer = new UpperHalfPlayer();
+            upperHalfPlayer.Name = "Half&Half";
+            upperHalfPlayer.Play(player3);
+            upperHalfPlayer.Play(player1);
+
+            Console.WriteLine("-------------------");
+
 
             List<Player> players = new List<Player>() {
                 player1, player2, player3, large
